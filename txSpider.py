@@ -4,7 +4,7 @@ import time
 from bs4 import BeautifulSoup
 
 # 连接数据库
-conn = pymysql.connect(host='119.29.28.81', port=3306, user='root', passwd='Linzijie123!!', db='gzh', charset='utf8')
+conn = pymysql.connect(host='ip', port=3306, user='root', passwd='password', db='db name', charset='utf8')
 # 获取数据库游标
 cursor = conn.cursor()
 currentTime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
