@@ -6,6 +6,8 @@ import requests
 # 连接数据库
 import time
 
+p = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+flag = [True, True, True, True, True, True]
 
 def get_json(page):
     conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='linzijie', db='py', charset='utf8')
@@ -40,9 +42,16 @@ def get_json(page):
     cursor.close()
     conn.close()
 
+def getNum(i):
+    while p:
+        get_json(p.pop())
+        # print(p.pop(), i)
+    flag[i] = False
+    _thread.exit()
 
-for i in range(1, 5):
-    _thread.start_new_thread(get_json, (i,))
+for i in range(1, 6):
+    _thread.start_new_thread(getNum, (i,))
     print("开跑!" + str(i))
-while True:
+while bool(flag[1]) or bool(flag[2]) or bool(flag[3]) or bool(flag[4]) or bool(flag[5]):
+    # print(flag)
     pass
