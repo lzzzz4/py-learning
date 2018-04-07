@@ -10,7 +10,7 @@ p = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 flag = [True, True, True, True, True, True]
 
 def get_json(page):
-    conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='linzijie', db='py', charset='utf8')
+    conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='', db='py', charset='utf8')
     # 获取数据库游标
     cursor = conn.cursor()
     currentTime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
